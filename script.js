@@ -26,7 +26,7 @@ yesBtn.addEventListener("click", function () {
 noBtn.addEventListener("click", function () {
   noCount++
 
-  yesBtn.style.fontSize = (16 + noCount * 13) + "px";
+  yesBtn.style.fontSize = (50 + noCount * 13) + "px";
 
   if (noCount < phrases.length) {
     noBtn.innerText = phrases[noCount - 1];
