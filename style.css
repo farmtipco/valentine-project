@@ -35,3 +35,18 @@ button {
 .noButton {
   background-color: #f44336;
 }
+
+.celebrate-img {
+  width: 250px;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
