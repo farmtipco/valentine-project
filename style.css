@@ -29,15 +29,18 @@ button {
 }
 
 .yesButton {
+  width: 250px;
   background-color: #04AA6D;
 }
 
 .noButton {
+  width: 250px;
   background-color: #f44336;
 }
 
 .celebrate-img {
-  width: 250px;
+  width: 70vw;
+  max-width: 400px;
   animation: pop 0.4s ease;
 }
 
