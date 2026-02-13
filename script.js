@@ -58,6 +58,7 @@ function showChatScreen() {
   document.body.innerHTML = `
     <div class="phone-wrapper">
       <img src="image/iphone.png" class="phone-frame">
+      
       <div class="chat-screen" id="chatScreen"></div>
     </div>
   `;
@@ -86,7 +87,73 @@ function showChatScreen() {
 
       chatStep++;
     }
+    else if (chatStep === messages.length) {
+
+      chatStep++; // กันไม่ให้รันซ้ำ
+      showFlowers();
+    }
   });
 
 
 }
+
+
+function showFlowers() {
+
+  document.body.innerHTML = `
+    <div id="flowerScene">
+      <div class="night-bg"></div>
+      <img id="flowerGif" 
+           src="https://media.tenor.com/aPFYmCN1OqsAAAAi/wrapped-gifts-birthday-presents.gif">
+      <div class="glow"></div>
+      <h1 class="final-text"></h1>
+    </div>
+  `;
+
+  const scene = document.getElementById("flowerScene");
+  const gif = document.getElementById("flowerGif");
+  const text = document.querySelector(".final-text");
+
+  // ===== Scene style =====
+  scene.style.position = "fixed";
+  scene.style.top = "0";
+  scene.style.left = "0";
+  scene.style.width = "100vw";
+  scene.style.height = "100vh";
+  scene.style.display = "flex";
+  scene.style.flexDirection = "column";
+  scene.style.justifyContent = "center";
+  scene.style.alignItems = "center";
+  scene.style.background = "radial-gradient(circle at center, #1a001f, #000)";
+  scene.style.overflow = "hidden"; ฃ
+  scene.style.background = "linear-gradient(135deg, #ffd6ec, #ff99cc, #ff66b2)";
+
+
+  // ===== GIF style =====
+  gif.style.width = "280px";
+  gif.style.opacity = "0";
+  gif.style.transform = "scale(0.6)";
+  gif.style.transition = "all 1.8s cubic-bezier(.68,-0.55,.27,1.55)";
+
+
+  // ===== Text style =====
+  text.style.color = "white";
+  text.style.marginTop = "30px";
+  text.style.fontSize = "32px";
+  text.style.opacity = "0";
+  text.style.transition = "opacity 2s ease";
+  text.style.fontFamily = "cursive";
+  text.style.textShadow = "0 0 15px hotpink";
+
+  // ===== Animate In =====
+  setTimeout(() => {
+    gif.style.opacity = "1";
+    gif.style.transform = "scale(1)";
+  }, 300);
+
+  setTimeout(() => {
+    text.style.opacity = "1";
+  }, 1500);
+
+}
+
